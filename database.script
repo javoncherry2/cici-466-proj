@@ -4,20 +4,20 @@
 
 CREATE TABLE User(
     user_id INT PRIMARY KEY,
-    name VARCHAR(100)
+    name VARCHAR(100) NOT NULL
                  );
 
 #creates user table
 CREATE TABLE Contributor(
     contributor_id INT PRIMARY KEY,
-    name VARCHAR(100)
+    name VARCHAR(100) NOT NULL
                         );
 
 CREATE TABLE Song(
     song_id INT PRIMARY KEY,
     main_artist VARCHAR(100) NOT NULL,
-    type VARCHAR(50),
-    title VARCHAR(150)
+    type VARCHAR(50) NOT NULL,
+    title VARCHAR(150) NOT NULL
                 );
 
 
