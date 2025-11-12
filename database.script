@@ -26,6 +26,28 @@ CREATE TABLE Song(
 
 
 
+CREATE TABLE KaraokeFile (
+  file_id INT AUTO_INCREMENT PRIMARY KEY,
+  song_id INT NOT NULL,
+  version VARCHAR(255) NOT NULL,
+  file_name VARCHAR(255) NOT NULL,
+  FOREIGN KEY (song_id) REFERENCES Song(song_id)
+);
+
+CREATE TABLE OpenQ (
+  open_id INT AUTO_INCREMENT PRIMARY KEY,
+  file_id INT NOT NULL,
+  `time` TIMESTAMP NOT NULL,
+  FOREIGN KEY (file_id) REFERENCES KaraokeFile(file_id)
+);
+
+CREATE TABLE PriorityQ (
+  priority_id INT AUTO_INCREMENT PRIMARY KEY,
+  file_id INT NOT NULL,
+  `time` TIMESTAMP NOT NULL,
+  FOREIGN KEY (file_id) REFERENCES KaraokeFile(file_id)
+);
+
 
 
 
