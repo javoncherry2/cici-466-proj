@@ -1,18 +1,25 @@
 #script file
+#creates tables and inserts song
 
-#creates user table
-
+--=====================
+--       User      ====
+--=====================
 CREATE TABLE User(
     user_id INT PRIMARY KEY,
     name VARCHAR(100) NOT NULL
                  );
 
-#creates user table
+--=====================
+--    Contributer  ====
+--=====================
 CREATE TABLE Contributor(
     contributor_id INT PRIMARY KEY,
     name VARCHAR(100) NOT NULL
                         );
 
+--=====================
+--       SONG      ====
+--=====================
 CREATE TABLE Song(
     song_id INT PRIMARY KEY,
     main_artist VARCHAR(100) NOT NULL,
@@ -20,109 +27,41 @@ CREATE TABLE Song(
     title VARCHAR(150) NOT NULL
                 );
 
-
-
-
-
-
-
-CREATE TABLE KaraokeFile (
+--=====================
+--   KaraokeFile   ====
+--=====================
+CREATE TABLE KaraokeFile(
   file_id INT AUTO_INCREMENT PRIMARY KEY,
   song_id INT NOT NULL,
   version VARCHAR(255) NOT NULL,
   file_name VARCHAR(255) NOT NULL,
   FOREIGN KEY (song_id) REFERENCES Song(song_id)
-);
+                        );
 
-CREATE TABLE OpenQ (
+--=====================
+--   Open Queue    ====
+--=====================
+CREATE TABLE OpenQ(
   open_id INT AUTO_INCREMENT PRIMARY KEY,
   file_id INT NOT NULL,
   `time` TIMESTAMP NOT NULL,
   FOREIGN KEY (file_id) REFERENCES KaraokeFile(file_id)
-);
+                  );
 
-CREATE TABLE PriorityQ (
+--=====================
+--    PriorityQ    ====
+--=====================
+CREATE TABLE PriorityQ(
   priority_id INT AUTO_INCREMENT PRIMARY KEY,
   file_id INT NOT NULL,
   `time` TIMESTAMP NOT NULL,
   FOREIGN KEY (file_id) REFERENCES KaraokeFile(file_id)
-);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
---====================
--- DJ ================
---====================
-CREATE TABLE DJ (
+                      );
+
+--=====================
+--        DJ       ====
+--=====================
+CREATE TABLE DJ(
   dj_id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(100),
   open_id INT,
@@ -132,7 +71,8 @@ CREATE TABLE DJ (
     ON DELETE SET NULL
   FOREIGN KEY (priority_id) REFERENCES PriorityQ(priority_id)
     ON DELETE SET NULL
-);
+              );
+
 --=====================
 -- REQUESTED SONGS ====
 --=====================
@@ -145,11 +85,12 @@ CREATE TABLE Requested_Songs (
     ON DELETE CASCADE,
   FOREIGN KEY (song_id) REFERENCES Song(song_id)
     ON DELETE SET CASCADE
-);
+                             );
+
 --=====================
 -- CONTRIBUTOR ========
 --=====================
-TABLE Contributed ( 
+TABLE Contributed( 
     contributor_id INT NOT NULL,
     song_id INT NOT NULL,
     contribution VARCHAR(100),
@@ -158,7 +99,7 @@ FOREIGN KEY (contributor_id) REFERENCES Contributor(contributor_id)
     ON DELETE CASCADE,
   FOREIGN KEY (song_id) REFERENCES Song(song_id)
     ON DELETE SET CASCADE
-);
+                );
 
 
 
