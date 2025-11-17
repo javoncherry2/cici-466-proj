@@ -1,5 +1,16 @@
-#script file
-#creates tables and inserts song
+--script file
+--creates tables and inserts song
+
+--drop tables if they exist
+DROP TABLE IF EXISTS Contributed;
+DROP TABLE IF EXISTS Requested_Songs;
+DROP TABLE IF EXISTS DJ;
+DROP TABLE IF EXISTS PriorityQ;
+DROP TABLE IF EXISTS OpenQ;
+DROP TABLE IF EXISTS KaraokeFile;
+DROP TABLE IF EXISTS Song;
+DROP TABLE IF EXISTS Contributor;
+DROP TABLE IF EXISTS User;
 
 --=====================
 --       User      ====
