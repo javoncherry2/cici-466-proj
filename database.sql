@@ -42,11 +42,13 @@ CREATE TABLE Song(
 --   KaraokeFile   ====
 --=====================
 CREATE TABLE KaraokeFile(
-  file_id INT AUTO_INCREMENT PRIMARY KEY,
-  song_id INT NOT NULL,
-  version VARCHAR(255) NOT NULL,
-  file_name VARCHAR(255) NOT NULL,
-  FOREIGN KEY (song_id) REFERENCES Song(song_id)
+file_id INT AUTO_INCREMENT PRIMARY KEY,
+song_id INT NOT NULL,
+version VARCHAR(255) NOT NULL,
+file_name VARCHAR(255) NOT NULL,
+UNIQUE (file_name), 
+FOREIGN KEY (song_id) REFERENCES Song(song_id),
+
                         );
 
 --=====================
