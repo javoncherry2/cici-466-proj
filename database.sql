@@ -114,6 +114,30 @@ CREATE TABLE Contributed(
     ON DELETE CASCADE
                         );
 
+-- =========================================================
+-- CSCI 466 Karaoke Management System
+-- Part 5 - Sample Data (DML)
+-- =========================================================
+
+-- USE karaoke_db;
+
+--=====================
+-- USER ===============
+--=====================
+
+INSERT INTO User (name) VALUES
+('Joe Mama'),
+('Javon Smith'),
+('Hamzah Subhani'),
+('Morgan Hill'),
+('Jamie Fox'),
+('Chris Stone'),
+('Pat Riley'),
+('Riley Brooks'),
+('Cameron Diaz'),
+('Robin Parker');
+
+
 --inserts base songs into database
 INSERT INTO Song
 (main_artist, type, title)
