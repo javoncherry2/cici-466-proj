@@ -174,6 +174,33 @@ INSERT INTO Song
 ('SZA', 'R&B', 'Kill Bill'),
 ('Kendrick Lamar', 'Hip-Hop', 'HUMBLE.'),
 ('Adele', 'Pop', 'Rolling in the Deep');
+
+
+INSERT INTO Contributor (name) VALUES
+('The Weeknd'),
+('Taylor Swift'),
+('Ed Sheeran'),
+('Drake'),
+('Bruno Mars'),
+('Billie Eilish'),
+('Imagine Dragons'),
+('Ariana Grande'),
+('Rihanna'),
+('Beyoncé'),
+('Post Malone'),
+('Harry Styles'),
+('Bad Bunny'),
+('Eminem'),
+('Coldplay'),
+('Queen'),
+('Olivia Rodrigo'),
+('Shakira'),
+('Dua Lipa'),
+('Travis Scott'),
+('SZA'),
+('Kendrick Lamar'),
+('Adele');
+
                        
 
 
