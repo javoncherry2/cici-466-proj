@@ -53,20 +53,23 @@ CREATE TABLE KaraokeFile(
 --   Open Queue    ====
 --=====================
 CREATE TABLE OpenQ(
-  open_id INT AUTO_INCREMENT PRIMARY KEY,
-  file_id INT NOT NULL,
-  `time` TIMESTAMP NOT NULL,
-  FOREIGN KEY (file_id) REFERENCES KaraokeFile(file_id)
+open_id INT AUTO_INCREMENT PRIMARY KEY,
+file_id INT NOT NULL,
+`time` TIMESTAMP NOT NULL,
+FOREIGN KEY (file_id) REFERENCES KaraokeFile(file_id),
+FOREIGN KEY (user_id) REFERENCES User(user_id)
+
                   );
 
 --=====================
 --    PriorityQ    ====
 --=====================
 CREATE TABLE PriorityQ(
-  priority_id INT AUTO_INCREMENT PRIMARY KEY,
-  file_id INT NOT NULL,
-  `time` TIMESTAMP NOT NULL,
-  FOREIGN KEY (file_id) REFERENCES KaraokeFile(file_id)
+priority_id INT AUTO_INCREMENT PRIMARY KEY,
+file_id INT NOT NULL,
+`time` TIMESTAMP NOT NULL,
+FOREIGN KEY (file_id) REFERENCES KaraokeFile(file_id)
+FOREIGN KEY (user_id) REFERENCES User(user_id)
                       );
 
 --=====================
