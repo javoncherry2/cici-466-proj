@@ -189,6 +189,12 @@ INSERT INTO Song
 ('Kendrick Lamar', 'Hip-Hop', 'HUMBLE.'),
 ('Adele', 'Pop', 'Rolling in the Deep');
 
+INSERT INTO ContributionType (contributionType_id, type)
+VALUES
+    (1, 'Singer'),
+    (2, 'Writer'),
+    (3, 'Producer');
+
 
 INSERT INTO KaraokeFile (song_id, version, file_name) VALUES
 (1, 'Original', 'blinding_lights_v1.mp4'),
@@ -234,11 +240,6 @@ INSERT INTO OpenQ (file_id, user_id) VALUES
 (10, 4),
 (12, 5);
 
-INSERT INTO ContributionType (contributionType_id, type)
-VALUES
-    (1, 'Singer'),
-    (2, 'Writer'),
-    (3, 'Producer');
 
 
 
