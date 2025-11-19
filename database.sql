@@ -123,8 +123,12 @@ CREATE TABLE Contributed(
     FOREIGN KEY(contributor_id) REFERENCES Contributor(contributor_id)
     ON DELETE CASCADE,
     FOREIGN KEY(song_id) REFERENCES Song(song_id)
+    ON DELETE CASCADE,
+    FOREIGN KEY(contributiontype_id) REFERENCES ContributionType( contributionType_id)
     ON DELETE CASCADE
-                        );
+                      );
+    
+                    
 
 -- =========================================================
 -- CSCI 466 Karaoke Management System
