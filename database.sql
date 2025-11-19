@@ -216,7 +216,7 @@ INSERT INTO KaraokeFile (song_id, version, file_name) VALUES
 (17, 'Original', 'halo_v1.mp4'),
 (18, 'Original', 'circles_v1.mp4'),
 (19, 'Original', 'as_it_was_v1.mp4'),
-(20, 'Original', 'titi_me_pregunto_v1.mp4');
+(20, 'Original', 'titi_me_pregunto_v1.mp4')
 (21, 'Original', 'lose_yourself_v1.mp4'),
 (22, 'Original', 'viva_la_vida_v1.mp4'),
 (23, 'Original', 'bohemian_rhapsody_v1.mp4'),
