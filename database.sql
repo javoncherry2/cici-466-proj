@@ -201,6 +201,25 @@ INSERT INTO Contributor (name) VALUES
 ('Kendrick Lamar'),
 ('Adele');
 
+-- =========================================================
+-- CONTRIBUTED (Contributor ↔ Song with role)      =========
+-- =========================================================
+INSERT INTO Contributed (contributor_id, song_id, role) VALUES
+(6, 1, 'Singer'),
+(6, 2, 'Singer'),
+(2, 3, 'Writer'),
+(2, 4, 'Singer'),
+(7, 5, 'Writer'),
+(7, 6, 'Singer'),
+(8, 7, 'Rapper'),
+(8, 8, 'Rapper'),
+(10, 9, 'Singer'),
+(10,10, 'Singer'),
+(5, 11, 'Singer'),
+(4, 23, 'Singer'),
+(9, 15, 'Singer'),
+(9, 16, 'Singer'),
+(3, 14, 'Singer');
                        
 
 
