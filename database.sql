@@ -141,17 +141,17 @@ CREATE TABLE Contributed(
 --=====================
 
 
-INSERT INTO User (name) VALUES
-('Joe Mama'),
-('Javon Cherry'),
-('Hamzah Subhani'),
-('Morgan Hill'),
-('Jamie Fox'),
-('Chris Stone'),
-('Pat Riley'),
-('Riley Brooks'),
-('Cameron Diaz'),
-('Robin Parker');
+INSERT INTO User (user_id, name) VALUES
+('1', 'Joe Mama'),
+('2', 'Javon Cherry'),
+('3', 'Hamzah Subhani'),
+('4', 'Morgan Hill'),
+('5', 'Jamie Fox'),
+('6','Chris Stone'),
+('7', 'Pat Riley'),
+('8', 'Riley Brooks'),
+('9', 'Cameron Diaz'),
+('10', 'Robin Parker');
 
 
 
@@ -221,6 +221,20 @@ INSERT INTO KaraokeFile (song_id, version, file_name) VALUES
 (28, 'Original', 'kill_bill_v1.mp4'),
 (29, 'Original', 'humble_v1.mp4'),
 (30, 'Original', 'rolling_in_the_deep_v1.mp4');
+
+
+
+-- =========================================================
+-- OPEN QUEUE                                 ==============
+-- =========================================================
+INSERT INTO OpenQ (file_id, user_id) VALUES
+(1, 1),
+(4, 2),
+(7, 3),
+(10, 4),
+(12, 5);
+
+
 
 
 
