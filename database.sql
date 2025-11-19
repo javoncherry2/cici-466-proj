@@ -234,6 +234,13 @@ INSERT INTO OpenQ (file_id, user_id) VALUES
 (10, 4),
 (12, 5);
 
+INSERT INTO ContributionType (contributionType_id, type)
+VALUES
+    (1, 'Singer'),
+    (2, 'Writer'),
+    (3, 'Producer');
+
+
 
 
 
