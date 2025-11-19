@@ -141,7 +141,53 @@ CREATE TABLE Contributed(
 --=====================
 
 
+INSERT INTO User (name) VALUES
+('Joe Mama'),
+('Javon Cherry'),
+('Hamzah Subhani'),
+('Morgan Hill'),
+('Jamie Fox'),
+('Chris Stone'),
+('Pat Riley'),
+('Riley Brooks'),
+('Cameron Diaz'),
+('Robin Parker');
 
+
+
+INSERT INTO Song
+(main_artist, type, title)
+ VALUES
+('The Weeknd', 'Pop', 'Blinding Lights'),
+('The Weeknd', 'Pop', 'Save Your Tears'),
+('Taylor Swift', 'Pop', 'Anti-Hero'),
+('Taylor Swift', 'Pop', 'Love Story'),
+('Ed Sheeran', 'Pop', 'Shape of You'),
+('Ed Sheeran', 'Pop', 'Perfect'),
+('Drake', 'Hip-Hop', 'God\'s Plan'),
+('Drake', 'Hip-Hop', 'One Dance'),
+('Bruno Mars', 'R&B', '24K Magic'),
+('Bruno Mars', 'R&B', 'That\'s What I Like'),
+('Billie Eilish', 'Alternative', 'Bad Guy'),
+('Imagine Dragons', 'Rock', 'Believer'),
+('Imagine Dragons', 'Rock', 'Demons'),
+('Ariana Grande', 'Pop', '7 Rings'),
+('Rihanna', 'Pop', 'Diamonds'),
+('Rihanna', 'Pop', 'Umbrella'),
+('Beyoncé', 'Pop', 'Halo'),
+('Post Malone', 'Pop', 'Circles'),
+('Harry Styles', 'Pop', 'As It Was'),
+('Bad Bunny', 'Latin', 'Titi Me Pregunto'),
+('Eminem', 'Hip-Hop', 'Lose Yourself'),
+('Coldplay', 'Alternative', 'Viva La Vida'),
+('Queen', 'Rock', 'Bohemian Rhapsody'),
+('Olivia Rodrigo', 'Pop', 'Drivers License'),
+('Shakira', 'Latin', 'Hips Don\'t Lie'),
+('Dua Lipa', 'Pop', 'Levitating'),
+('Travis Scott', 'Hip-Hop', 'Sicko Mode'),
+('SZA', 'R&B', 'Kill Bill'),
+('Kendrick Lamar', 'Hip-Hop', 'HUMBLE.'),
+('Adele', 'Pop', 'Rolling in the Deep');
 
 
 
