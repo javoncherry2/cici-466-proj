@@ -95,7 +95,8 @@ CREATE TABLE DJ(
      priority_id INT,
     */
     name VARCHAR(150),
-    currently_playing VARCHAR(150)
+    currently_playing INT,
+    FOREIGN KEY(currently_playing) REFERENCES Song(song_id)
     /*
     FOREIGN KEY(priority_id) REFERENCES PriorityQ(priority_id),
     FOREIGN KEY(open_id) REFERENCES OpenQ(open_id)
@@ -259,9 +260,9 @@ INSERT INTO OpenQ (file_id, user_id, time) VALUES
 (12, 5, '2025-11-22 22:50:04');
 
 
--- =================================
--- Inserts intoPRIORITY QUEUE ======
--- =================================
+--=================================
+-- Inserts into PRIORITY QUEUE ====
+--=================================
 INSERT INTO PriorityQ (file_id, user_id, amount_paid, time) VALUES
 (2, 6, 5.00, '2025-11-22 19:15:20'),
 (6, 7, 3.50, '2025-11-22 20:11:12'),
@@ -269,9 +270,12 @@ INSERT INTO PriorityQ (file_id, user_id, amount_paid, time) VALUES
 (15,9, 7.00, '2025-11-22 21:20:07'),
 (20,10,4.00, '2025-11-22 23:59:59');
 
+--======================
+-- Inserts into DJ =====
+--======================
 INSERT INTO DJ (name, currently_playing)
 VALUES
-('DJ MixMaster', '1');
+('DJ MixMaster', 1);
 
 
 
