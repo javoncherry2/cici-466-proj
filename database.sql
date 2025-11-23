@@ -91,12 +91,15 @@ FOREIGN KEY (user_id) REFERENCES User(user_id)
 --=====================
 CREATE TABLE DJ(
     dj_id INT AUTO_INCREMENT PRIMARY KEY,
-    open_id INT,
-    priority_id INT,
+    /*open_id INT,
+     priority_id INT,
+    */
     name VARCHAR(150),
-    currently_playing VARCHAR(150), 
+    currently_playing VARCHAR(150)
+    /*
     FOREIGN KEY(priority_id) REFERENCES PriorityQ(priority_id),
     FOREIGN KEY(open_id) REFERENCES OpenQ(open_id)
+    */
                );
 
 --=====================
@@ -131,16 +134,14 @@ CREATE TABLE Contributed(
 
 -- =========================================================
 -- CSCI 466 Karaoke Management System
--- Part 5 - Sample Data (DML)
+-- Part 5 - Inserts Sample Data (DML)
 -- =========================================================
 
 -- USE karaoke_db;
 
 --=====================
--- USER ===============
+--Inserts into USER ==
 --=====================
-
-
 INSERT INTO User (user_id, name) VALUES
 ('1', 'Joe Mama'),
 ('2', 'Javon Cherry'),
@@ -153,8 +154,9 @@ INSERT INTO User (user_id, name) VALUES
 ('9', 'Cameron Diaz'),
 ('10', 'Robin Parker');
 
-
-
+--=====================
+--Inserts into Song ==
+--=====================
 INSERT INTO Song
 (main_artist, type, title)
  VALUES
@@ -189,66 +191,87 @@ INSERT INTO Song
 ('Kendrick Lamar', 'Hip-Hop', 'HUMBLE.'),
 ('Adele', 'Pop', 'Rolling in the Deep');
 
+
+--================================
+--Inserts into Contribution type ==
+--================================
 INSERT INTO ContributionType (contributionType_id, type)
 VALUES
-    (1, 'Singer'),
-    (2, 'Writer'),
-    (3, 'Producer');
+    (1, 'Writer'),
+    (2, 'Singer'),
+    (3, 'instrumentalist');
 
+--===========================
+--Inserts into KaraokeFile ==
+--===========================
 INSERT INTO KaraokeFile (song_id, version, file_name) VALUES
-(1, 'Original', 'blinding_lights_v1.mp4'),
-(2, 'Original', 'save_your_tears_v1.mp4'),
-(3, 'Original', 'anti_hero_v1.mp4'),
-(4, 'Original', 'love_story_v1.mp4'),
-(5, 'Original', 'shape_of_you_v1.mp4'),
-(6, 'Original', 'perfect_v1.mp4'),
-(7, 'Original', 'gods_plan_v1.mp4'),
-(8, 'Original', 'one_dance_v1.mp4'),
-(9, 'Original', '24k_magic_v1.mp4'),
-(10, 'Original', 'thats_what_i_like_v1.mp4'),
-(11, 'Original', 'bad_guy_v1.mp4'),
-(12, 'Original', 'believer_v1.mp4'),
-(13, 'Original', 'demons_v1.mp4'),
-(14, 'Original', '7_rings_v1.mp4'),
-(15, 'Original', 'diamonds_v1.mp4'),
-(16, 'Original', 'umbrella_v1.mp4'),
-(17, 'Original', 'halo_v1.mp4'),
-(18, 'Original', 'circles_v1.mp4'),
-(19, 'Original', 'as_it_was_v1.mp4'),
-(20, 'Original', 'titi_me_pregunto_v1.mp4'),
-(21, 'Original', 'lose_yourself_v1.mp4'),
-(22, 'Original', 'viva_la_vida_v1.mp4'),
-(23, 'Original', 'bohemian_rhapsody_v1.mp4'),
-(24, 'Original', 'drivers_license_v1.mp4'),
-(25, 'Original', 'hips_dont_lie_v1.mp4'),
-(26, 'Original', 'levitating_v1.mp4'),
-(27, 'Original', 'sicko_mode_v1.mp4'),
-(28, 'Original', 'kill_bill_v1.mp4'),
-(29, 'Original', 'humble_v1.mp4'),
-(30, 'Original', 'rolling_in_the_deep_v1.mp4');
+(1,'Original','blinding_lights_v1.mp4'),
+(1,'Extended','blinding_lights_v2.mp4'),
+(2,'Original','save_your_tears_v1.mp4'),
+(2,'Extended','save_your_tears_v2.mp4'),
+(3,'Original','anti_hero_v1.mp4'),
+(4,'Original','love_story_v1.mp4'),
+(4,'Shortend','love_story_v2.mp4'),
+(5,'Original','shape_of_you_v1.mp4'),
+(6,'Original','perfect_v1.mp4'),
+(7,'Original','gods_plan_v1.mp4'),
+(8,'Original','one_dance_v1.mp4'),
+(9,'Original','24k_magic_v1.mp4'),
+(9,'Spanish','24k_magic_v2.mp4'),
+(10,'Original','thats_what_i_like_v1.mp4'),
+(11,'Original','bad_guy_v1.mp4'),
+(12,'Original','believer_v1.mp4'),
+(12,'Clean','believer_v2.mp4'),
+(13,'Original','demons_v1.mp4'),
+(14,'Original','7_rings_v1.mp4'),
+(15,'Original','diamonds_v1.mp4'),
+(16,'Original','umbrella_v1.mp4'),
+(17,'Original','halo_v1.mp4'),
+(17,'Acoustic','halo_v2.mp4'),
+(18,'Original','circles_v1.mp4'),
+(19,'Original','as_it_was_v1.mp4'),
+(19,'Orchestral','as_it_was_v2.mp4'),
+(20,'Original','titi_me_pregunto_v1.mp4'),
+(21,'Original','lose_yourself_v1.mp4'),
+(22,'Original','viva_la_vida_v1.mp4'),
+(22,'Live','viva_la_vida_v2.mp4'),
+(23,'Original','bohemian_rhapsody_v1.mp4'),
+(24,'Original','drivers_license_v1.mp4'),
+(25,'Original','hips_dont_lie_v1.mp4'),
+(25,'Extended','hips_dont_lie_v2.mp4'),
+(26,'Original','levitating_v1.mp4'),
+(27,'Original','sicko_mode_v1.mp4'),
+(28,'Original','kill_bill_v1.mp4'),
+(29,'Original','humble_v1.mp4'),
+(30,'Original','rolling_in_the_deep_v1.mp4'),
+(30,'Fast','rolling_in_the_deep_v2.mp4'),
+(30,'Slow','rolling_in_the_deep_v3.mp4');
 
 
+--=====================
+--Inserts into OpenQ ==
+--=====================
+INSERT INTO OpenQ (file_id, user_id, time) VALUES
+(1, 1, '2025-11-22 19:11:02'),
+(4, 2, '2025-11-22 20:18:09'),
+(7, 3, '2025-11-22 21:54:20'),
+(10, 4, '2025-11-22 21:00:00'),
+(12, 5, '2025-11-22 22:50:04');
 
--- =========================================================
--- OPEN QUEUE                                 ==============
--- =========================================================
-INSERT INTO OpenQ (file_id, user_id) VALUES
-(1, 1),
-(4, 2),
-(7, 3),
-(10, 4),
-(12, 5);
 
+-- =================================
+-- Inserts intoPRIORITY QUEUE ======
+-- =================================
+INSERT INTO PriorityQ (file_id, user_id, amount_paid, time) VALUES
+(2, 6, 5.00, '2025-11-22 19:15:20'),
+(6, 7, 3.50, '2025-11-22 20:11:12'),
+(9, 8, 10.00, '2025-11-22 20:34:30'),
+(15,9, 7.00, '2025-11-22 21:20:07'),
+(20,10,4.00, '2025-11-22 23:59:59');
 
--- =========================================================
--- PRIORITY QUEUE                               ============
--- =========================================================
-INSERT INTO PriorityQ (file_id, user_id, amount_paid) VALUES
-(2, 6, 5.00),
-(6, 7, 3.50),
-(9, 8, 10.00),
-(15,9, 7.00),
-(20,10,4.00);
+INSERT INTO DJ (name, currently_playing)
+VALUES
+('DJ MixMaster', '1');
 
 
 
